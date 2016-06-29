@@ -1,7 +1,9 @@
 var boids = [];
-
+var canvas
 function setup() {
-  createCanvas(720, 400);
+ canvas = createCanvas(windowWidth, windowHeight);
+  canvas.position(0,0);
+  canvas.class("lemon");
 
   // Add an initial set of boids into the system
   for (var i = 0; i < 100; i++) {
