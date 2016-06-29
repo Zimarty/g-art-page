@@ -19,7 +19,6 @@ function draw() {
       var size = dist(mouseX, mouseY, i, j);
       size = size/max_distance * 50;
       ellipse(i, j, size, size);
-      stroke((mouseX*255)/height,(mouseY*255)/width,40);
       noFill();
     }
   }

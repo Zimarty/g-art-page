@@ -6,13 +6,14 @@ function setup() {
   canvas.class("lemon");
 
   // Add an initial set of boids into the system
-  for (var i = 0; i < 100; i++) {
+  for (var i = 0; i < 50; i++) {
     boids[i] = new Boid(random(width), random(height));
   }
 }
 
 function draw() {
-  background(51);
+  clear();
+  //background(51);
   // Run all the boids
   for (var i = 0; i < boids.length; i++) {
     boids[i].run(boids);
@@ -84,9 +85,9 @@ Boid.prototype.seek = function(target) {
 
 // Draw boid as a circle
 Boid.prototype.render = function() {
-  fill(127, 127);
-  stroke(200);
-  ellipse(this.position.x, this.position.y, 16, 16);
+  noFill();
+  stroke((mouseX*255)/height,(mouseY*255)/width,200);
+  ellipse(this.position.x, this.position.y, 10, 10);
 }
 
 // Wraparound
